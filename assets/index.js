@@ -18,8 +18,77 @@ inquirer
 		/* Pass your questions in here */
 		{
 			type: "input",
-			name: "username",
-			message: "What is your username?",
+			name: "title",
+			message: "project title",
+			default: "no title entry",
+		},
+		{
+			type: "editor",
+			name: "description",
+			message:
+				"Enter project description in the opened .txt editor and then close the editor",
+			filter: function (input) {
+				if (input == "") {
+					return "no entry";
+				}
+			},
+		},
+
+		{
+			type: "editor",
+			name: "installation",
+			message:
+				"Add instructions for installing this app in the opened .txt editor and then close the editor",
+			filter: function (input) {
+				if (input == "") {
+					return "no entry";
+				}
+			},
+		},
+		{
+			type: "editor",
+			name: "usage",
+			message:
+				"Enter usage instructions for the project in the opened .txt editor and then close the editor",
+			filter: function (input) {
+				if (input == "") {
+					return "no entry";
+				}
+			},
+		},
+		{
+			type: "editor",
+			name: "contribution",
+			message:
+				"Add instructions for contributing to this project in the .txt editor and then close the editor",
+			filter: function (input) {
+				if (input == "") {
+					return "no entry";
+				}
+			},
+		},
+		{
+			type: "editor",
+			name: "test",
+			message:
+				"Add instructions for testing this application in the .txt editor and then close the editor",
+			filter: function (input) {
+				if (input == "") {
+					return "no entry";
+				}
+			},
+		},
+		{
+			type: "list",
+			name: "license",
+			message: "Choose a license",
+			default: "no license selection",
+			choices: ["MIT license", "No license", "Fake license"],
+		},
+		{
+			type: "input",
+			name: "github_username",
+			message: "Github username?",
 			default: "no entry",
 		},
 	])
@@ -35,7 +104,12 @@ inquirer
 		}
 	});
 
-// [Installation](#installation)
-// - [Usage](#usage)
-// - [Credits](#credits)
-// - [License](#license)
+// Title,
+// Description,
+// Table of Contents,
+// Installation,
+// Usage,
+// License,
+// Contributing,
+// Tests,
+// and Questions
