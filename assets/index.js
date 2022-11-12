@@ -30,6 +30,8 @@ inquirer
 			filter: function (input) {
 				if (input == "") {
 					return "no entry";
+				} else {
+					return input;
 				}
 			},
 		},
@@ -41,7 +43,9 @@ inquirer
 				"Add instructions for installing this app in the opened .txt editor and then close the editor",
 			filter: function (input) {
 				if (input == "") {
-					return "no entry";
+					return "no installation entry";
+				} else {
+					return input;
 				}
 			},
 		},
@@ -52,7 +56,9 @@ inquirer
 				"Enter usage instructions for the project in the opened .txt editor and then close the editor",
 			filter: function (input) {
 				if (input == "") {
-					return "no entry";
+					return "no usage entry";
+				} else {
+					return input;
 				}
 			},
 		},
@@ -63,18 +69,22 @@ inquirer
 				"Add instructions for contributing to this project in the .txt editor and then close the editor",
 			filter: function (input) {
 				if (input == "") {
-					return "no entry";
+					return "no contribution entry";
+				} else {
+					return input;
 				}
 			},
 		},
 		{
 			type: "editor",
-			name: "test",
+			name: "testing",
 			message:
 				"Add instructions for testing this application in the .txt editor and then close the editor",
 			filter: function (input) {
 				if (input == "") {
-					return "no entry";
+					return "no testing entry";
+				} else {
+					return input;
 				}
 			},
 		},
@@ -98,9 +108,10 @@ inquirer
 	})
 	.catch((error) => {
 		if (error.isTtyError) {
-			// Prompt couldn't be rendered in the current environment
+			console.log("Prompt couldn't be rendered in the current environment");
 		} else {
 			// Something else went wrong
+			console.error(error);
 		}
 	});
 
