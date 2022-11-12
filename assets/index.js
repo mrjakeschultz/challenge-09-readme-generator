@@ -1,10 +1,20 @@
 // TODO: Include packages needed for this application
+const inquirer = require("inquirer");
+const fse = require("fs-extra");
 
 // TODO: Create an array of questions for user input
 const questions = [];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+	let filePath = "./assets/newREADME";
+	fse.ensureFile(filePath.fileName, (err) => {
+		console.log(err);
+	});
+	fse.outputFile(filePath.fileName, data, (err) => {
+		console.log(err);
+	});
+}
 
 // TODO: Create a function to initialize app
 function init() {}
@@ -12,7 +22,8 @@ function init() {}
 // Function call to initialize app
 init();
 
-var inquirer = require("inquirer");
+const generateMarkdown = require("./generateMarkdown");
+
 inquirer
 	.prompt([
 		/* Pass your questions in here */
@@ -30,6 +41,8 @@ inquirer
 			filter: function (input) {
 				if (input == "") {
 					return "no entry";
+				} else {
+					return input;
 				}
 			},
 		},
@@ -41,7 +54,9 @@ inquirer
 				"Add instructions for installing this app in the opened .txt editor and then close the editor",
 			filter: function (input) {
 				if (input == "") {
-					return "no entry";
+					return "no installation entry";
+				} else {
+					return input;
 				}
 			},
 		},
@@ -52,7 +67,9 @@ inquirer
 				"Enter usage instructions for the project in the opened .txt editor and then close the editor",
 			filter: function (input) {
 				if (input == "") {
-					return "no entry";
+					return "no usage entry";
+				} else {
+					return input;
 				}
 			},
 		},
@@ -63,18 +80,22 @@ inquirer
 				"Add instructions for contributing to this project in the .txt editor and then close the editor",
 			filter: function (input) {
 				if (input == "") {
-					return "no entry";
+					return "no contribution entry";
+				} else {
+					return input;
 				}
 			},
 		},
 		{
 			type: "editor",
-			name: "test",
+			name: "testing",
 			message:
 				"Add instructions for testing this application in the .txt editor and then close the editor",
 			filter: function (input) {
 				if (input == "") {
-					return "no entry";
+					return "no testing entry";
+				} else {
+					return input;
 				}
 			},
 		},
@@ -94,13 +115,16 @@ inquirer
 	])
 	.then((answers) => {
 		console.log("🚀 ~ file: index.js ~ line 27 ~ .then ~ answers", answers);
+		generateMarkdown(answers);
+		writeToFile("NewREADME", answers);
 		// Use user feedback for... whatever!!
 	})
 	.catch((error) => {
 		if (error.isTtyError) {
-			// Prompt couldn't be rendered in the current environment
+			console.log("Prompt couldn't be rendered in the current environment");
 		} else {
 			// Something else went wrong
+			console.error(error);
 		}
 	});
 
