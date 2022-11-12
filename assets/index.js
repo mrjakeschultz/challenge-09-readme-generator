@@ -11,3 +11,8 @@ function init() {}
 
 // Function call to initialize app
 init();
+
+// [Installation](#installation)
+// - [Usage](#usage)
+// - [Credits](#credits)
+// - [License](#license)
