@@ -1,10 +1,20 @@
 // TODO: Include packages needed for this application
+const inquirer = require("inquirer");
+const fse = require("fs-extra");
 
 // TODO: Create an array of questions for user input
 const questions = [];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+	let filePath = "./assets/newREADME";
+	fse.ensureFile(filePath.fileName, (err) => {
+		console.log(err);
+	});
+	fse.outputFile(filePath.fileName, data, (err) => {
+		console.log(err);
+	});
+}
 
 // TODO: Create a function to initialize app
 function init() {}
@@ -12,7 +22,8 @@ function init() {}
 // Function call to initialize app
 init();
 
-var inquirer = require("inquirer");
+const generateMarkdown = require("./generateMarkdown");
+
 inquirer
 	.prompt([
 		/* Pass your questions in here */
@@ -104,6 +115,8 @@ inquirer
 	])
 	.then((answers) => {
 		console.log("🚀 ~ file: index.js ~ line 27 ~ .then ~ answers", answers);
+		generateMarkdown(answers);
+		writeToFile("NewREADME", answers);
 		// Use user feedback for... whatever!!
 	})
 	.catch((error) => {
