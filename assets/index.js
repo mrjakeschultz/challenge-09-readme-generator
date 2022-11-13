@@ -7,13 +7,21 @@ const questions = [];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-	let filePath = "./assets/newREADME/";
-	fse.ensureFile(filePath + fileName, (err) => {
-		console.log(err);
-	});
-	fse.outputFile(filePath.fileName, data, (err) => {
-		console.log(err);
-	});
+	let filePath = "./new_README_file/";
+	fse
+		.outputFile(filePath + fileName, data)
+		//vvv Optional block vvv to move the generated README file after creating it
+		// .then((file) =>
+		// 	fse.move("./new_README_file/" + fileName, "./" + fileName, {
+		// 		overwrite: true,
+		// 	})
+		// )
+		.then(() => {
+			console.log("success!");
+		})
+		.catch((err) => {
+			console.error(err);
+		});
 }
 
 // TODO: Create a function to initialize app
@@ -115,8 +123,8 @@ inquirer
 	])
 	.then((answers) => {
 		console.log("🚀 ~ file: index.js ~ line 27 ~ .then ~ answers", answers);
-		generateMarkdown(answers);
-		writeToFile("NewREADME", answers);
+		let answersMarkdownArr = generateMarkdown(answers);
+		writeToFile("yourNewREADME.md", answersMarkdownArr);
 		// Use user feedback for... whatever!!
 	})
 	.catch((error) => {
