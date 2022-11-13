@@ -7,8 +7,8 @@ const questions = [];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-	let filePath = "../assets/newREADME";
-	fse.ensureFile(filePath.fileName, (err) => {
+	let filePath = "./assets/newREADME/";
+	fse.ensureFile(filePath + fileName, (err) => {
 		console.log(err);
 	});
 	fse.outputFile(filePath.fileName, data, (err) => {
