@@ -17,7 +17,7 @@ function generateMarkdown(data) {
   
 
   # Description
-  ###${data.description}
+  ### ${data.description}
   
 
   # Installation
@@ -34,9 +34,13 @@ function generateMarkdown(data) {
 
   # Testing
   ### ${data.testing}
+
+
+  # License
+  ### This software is distributed under ${data.license}
   
-  
-  #Find me on GitHub
+
+  # Questions
   ### ${data.github_username}
   `;
 }

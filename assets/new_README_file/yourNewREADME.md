@@ -1,25 +1,31 @@
-# title part
 
-# Description
+  # my project title
+  
 
-### the description content
+  # Description
+  ###the is the description
+  
 
-# Installation
+  # Installation
+  ### installation instructions 
+  
 
-### installation instructions
+  # Usage
+  ### usage instructions here 
+  
 
-# Usage
+  # Contribute
+  ### contributions instructions here and stuff 
+  
 
-### usage instructions here
+  # Testing
+  ### here are testing instructions 
 
-# Contribute
 
-### contribute stuff
+  # License
+  ### This software is distributed under the MIT license. [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  
 
-# Testing
-
-### testing stuff
-
-# Find me on GitHub
-
-### mrjake
+  #Questions
+  ### mrjake
+  

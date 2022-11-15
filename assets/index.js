@@ -112,7 +112,18 @@ inquirer
 			name: "license",
 			message: "Choose a license",
 			default: "no license selection",
-			choices: ["MIT license", "No license", "Fake license"],
+			choices: ["MIT license", "Bullshit license", "No license"],
+			filter: function (input) {
+				if (input == "MIT license") {
+					return "the MIT license. [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+				}
+				if (input == "Bullshit license") {
+					return "the IBM license. [![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)";
+				}
+				if (input == "No license") {
+					return "no license.";
+				}
+			},
 		},
 		{
 			type: "input",
