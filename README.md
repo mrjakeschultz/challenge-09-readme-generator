@@ -16,13 +16,13 @@
 
 ### This software requires the following NPM packages.
 
-1. Inquirer.
-2. File System Extra.
+1. [Inquirer](https://www.npmjs.com/package/inquirer).
+2. [File System Extra / fs-extra](https://www.npmjs.com/package/fs-extra).
 
 INSTALLATION STEPS
 
-1. Download this file to any directory.
-2. Install Inquirer and File System Extra in the app's directory. If these are already installed then skip to Step 5.
+1. Download [this file](https://github.com/mrjakeschultz/challenge-09-readme-generator) to any directory.
+2. Install Inquirer and File System Extra in the app's directory.
 3. Install Inquirer (npm i inquirer).
 4. Install File System Extra (npm i fs-extra).
 
@@ -32,9 +32,16 @@ You are ready to rock.
 
 1. Run index.js in Node (node index.js).
 2. Follow the instructions and answer the prompts in the terminal.
-3. The app will generate both 'yournewREADME.md' and its parent folder 'new_README_file' in the app directory.
 
-If you make a mistake or don't like what you've written simply repeat the steps above. The generator will overwrite the previously generated README with your latest version.
+![](images\README_gen_demo.png)
+
+See the demo video below.
+
+[![Click to open a demo video in a new tab](images\README_gen_video_thumbnail.png)](https://drive.google.com/file/d/1ilFUy1V14qAb5I01IW2tFMmp2uXPPv5x/view?usp=share_link "Click to open a demo video in a new tab")
+
+3. The app will generate both 'yournewREADME.md' and its parent folder 'new_README_file' in the /assets folder.
+
+If you make a mistake or don't like what your inputs simply repeat the steps above. The generator will overwrite the previously generated README with your latest version.
 
 # Contribute
 
