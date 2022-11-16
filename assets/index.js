@@ -39,16 +39,16 @@ inquirer
 			type: "input",
 			name: "title",
 			message: "project title",
-			default: "no title entry",
+			default: "UNTITLED PROJECT",
 		},
 		{
 			type: "editor",
 			name: "description",
 			message:
-				"Enter project description in the opened .txt editor and then close the editor",
+				"Press ENTER to open your default .txt editor; enter a description for this software and then SAVE and close the editor (DO NOT SAVE AS)",
 			filter: function (input) {
 				if (input == "") {
-					return "no entry";
+					return "NONE";
 				} else {
 					return input;
 				}
@@ -59,10 +59,10 @@ inquirer
 			type: "editor",
 			name: "installation",
 			message:
-				"Add instructions for installing this app in the opened .txt editor and then close the editor",
+				"Press ENTER to open your default .txt editor; enter the installation instructions for this software and then SAVE and close the editor (DO NOT SAVE AS)",
 			filter: function (input) {
 				if (input == "") {
-					return "no installation entry";
+					return "NO INSTALLATION INSTRUCTIONS.";
 				} else {
 					return input;
 				}
@@ -72,23 +72,10 @@ inquirer
 			type: "editor",
 			name: "usage",
 			message:
-				"Enter usage instructions for the project in the opened .txt editor and then close the editor",
+				"Press ENTER to open your default .txt editor; enter instructions for using this software and then SAVE and close the editor (DO NOT SAVE AS)",
 			filter: function (input) {
 				if (input == "") {
-					return "no usage entry";
-				} else {
-					return input;
-				}
-			},
-		},
-		{
-			type: "editor",
-			name: "contribution",
-			message:
-				"Add instructions for contributing to this project in the .txt editor and then close the editor",
-			filter: function (input) {
-				if (input == "") {
-					return "no contribution entry";
+					return "NO USAGE INSTRUCTIONS.";
 				} else {
 					return input;
 				}
@@ -98,38 +85,58 @@ inquirer
 			type: "editor",
 			name: "testing",
 			message:
-				"Add instructions for testing this application in the .txt editor and then close the editor",
+				"Press ENTER to open your default .txt editor; enter testing instructions for this software and then SAVE and close the editor (DO NOT SAVE AS)",
 			filter: function (input) {
 				if (input == "") {
-					return "no testing entry";
+					return "NO TESTING INSTRUCTIONS.";
 				} else {
 					return input;
 				}
 			},
 		},
 		{
+			type: "editor",
+			name: "contribution",
+			message:
+				"Press ENTER to open your default .txt editor; how-to-contribute instructions for this software and then SAVE and close the editor (DO NOT SAVE AS)",
+			filter: function (input) {
+				if (input == "") {
+					return "NO CONTRIBUTION INSTRUCTIONS.";
+				} else {
+					return input;
+				}
+			},
+		},
+
+		{
 			type: "list",
 			name: "license",
 			message: "Choose a license",
 			default: "no license selection",
-			choices: ["MIT license", "Bullshit license", "No license"],
+			choices: ["MIT license", "A crappy license", "No license"],
 			filter: function (input) {
 				if (input == "MIT license") {
-					return "the MIT license. [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+					return "The MIT license. [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
 				}
-				if (input == "Bullshit license") {
-					return "the IBM license. [![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)";
+				if (input == "A crappy license") {
+					return "The IBM license. [![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)";
 				}
 				if (input == "No license") {
-					return "no license.";
+					return "No license. Nothing governs the use or re-distribution of this software.";
 				}
 			},
 		},
 		{
 			type: "input",
+			name: "email",
+			message: "Enter your email address",
+			default: "NO EMAIL ADDRESS",
+		},
+		{
+			type: "input",
 			name: "github_username",
-			message: "Github username?",
-			default: "no entry",
+			message: "Enter your GitHub username",
+			default: "NO GITHUB PROFILE",
 		},
 	])
 	.then((answers) => {
