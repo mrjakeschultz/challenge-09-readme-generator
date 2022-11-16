@@ -33,11 +33,11 @@ You are ready to rock.
 1. Run index.js in Node (node index.js).
 2. Follow the instructions and answer the prompts in the terminal.
 
-![](images\README_gen_demo.png)
+![](images/README_gen_demo.png)
 
 See the demo video below.
 
-[![Click to open a demo video in a new tab](images\README_gen_video_thumbnail.png)](https://drive.google.com/file/d/1ilFUy1V14qAb5I01IW2tFMmp2uXPPv5x/view?usp=share_link "Click to open a demo video in a new tab")
+[![Click to open a demo video in a new tab](images/README_gen_video_thumbnail.png)](https://drive.google.com/file/d/1ilFUy1V14qAb5I01IW2tFMmp2uXPPv5x/view?usp=share_link "Click to open a demo video in a new tab")
 
 3. The app will generate both 'yournewREADME.md' and its parent folder 'new_README_file' in the /assets folder.
 
